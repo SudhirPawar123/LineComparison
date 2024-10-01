@@ -21,7 +21,23 @@ public class LineComparison {
 
         return (Double.compare(line.length(), this.length()) == 0);
     }
+    public int compareTo(LineComparison other) {
+        return Double.compare(this.length(), other.length());
+    }
     public static void main(String[] args) {
-        System.out.printf("Welcome to Line Comparison Computation Problem..!");
+        System.out.println("Welcome to Line Comparison Computation Problem..!");
+        LineComparison line1 = new LineComparison(1, 2, 3, 4);
+        LineComparison line2 = new LineComparison(2, 3, 4, 5);
+        LineComparison line3 = new LineComparison(1, 2, 3, 4);
+
+        System.out.println("Length of line1: " + line1.length());
+        System.out.println("Length of line2: " + line2.length());
+        System.out.println("Length of line3: " + line3.length());
+
+        System.out.println("line1 equals line2: " + line1.equals(line2));
+        System.out.println("line1 equals line3: " + line1.equals(line3));
+
+        System.out.println("Comparison of line1 and line2: " + line1.compareTo(line2));
+        System.out.println("Comparison of line1 and line3: " + line1.compareTo(line3));
     }
 }
